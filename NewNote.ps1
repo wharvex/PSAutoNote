@@ -19,13 +19,13 @@ function New-Note {
     $sb = {
         # file name; new window flag
         param($fn, $nwf)
-        # s for same window
-        if ($nwf -eq 's') {
-            vim $fn
-        }
-        else {
+        # n for new window
+        if ($nwf -eq 'n') {
             Start-Process powershell.exe `
             -ArgumentList "-NoExit -Command vim $($fn); exit"
+        }
+        else {
+            vim $fn
         }
     }
 
