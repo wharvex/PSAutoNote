@@ -77,3 +77,7 @@ function New-Note {
     }
 }
 
+# For debugging in VS Code.
+if ($MyInvocation.InvocationName -ne ".") {
+    New-Note
+}
